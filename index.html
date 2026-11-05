@@ -1,0 +1,2956 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VERTEX DISTRIBUIDORA | Limpeza, Escritório e Papelaria</title>
+
+<meta name="description" content="Catálogo online de materiais de limpeza, escritório e papelaria. Monte seu kit e faça seu pedido pelo WhatsApp.">
+
+<style>
+:root {
+    --primary: #087b63;
+    --dark: #075442;
+    --light: #eaf7f2;
+    --orange: #f39b35;
+    --text: #24332e;
+    --muted: #718078;
+    --bg: #f6f9f7;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 115px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #0000000c;
+}
+
+.topbar {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 190px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.cart-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.cart-button span {
+    background: white;
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin-left: 5px;
+}
+
+/* BANNER */
+
+.hero {
+    background: linear-gradient(120deg, #064e40, #09846a);
+    color: white;
+    padding: 70px 22px;
+}
+
+.hero-content {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    max-width: 680px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #d9eee7;
+    max-width: 570px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: var(--orange);
+    color: #17352d;
+    text-decoration: none;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 5px 16px #00000020;
+    transition: .2s;
+}
+
+.hero-cta:hover {
+    background: #ffad4d;
+    transform: translateY(-2px);
+}
+
+.hero-cta.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid #ffffff80;
+    box-shadow: none;
+}
+
+.hero-cta.secondary:hover {
+    background: #ffffff20;
+}
+
+.hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.hero-info span {
+    background: #ffffff20;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* CONTEÚDO */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 42px 22px 70px;
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 27px;
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* PESQUISA */
+
+.toolbar {
+    margin-bottom: 18px;
+}
+
+.search {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
+
+.search:focus {
+    border-color: var(--primary);
+}
+
+/* FILTROS */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 28px;
+}
+
+.filter {
+    padding: 10px 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 30px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* PRODUTOS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px #0000000b;
+}
+
+.product-image {
+    width: 100%;
+    height: 175px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 7px;
+    transition: transform .3s;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.brand {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.product small {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.add {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add:hover {
+    background: var(--dark);
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+/* CARRINHO */
+
+.cart-section {
+    margin-top: 55px;
+    background: white;
+    border: 1px solid #e6eee9;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.cart-section h2 {
+    margin-bottom: 18px;
+}
+
+.cart-empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px 0;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.cart-row strong {
+    font-size: 13px;
+}
+
+.cart-row small {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    width: 29px;
+    height: 29px;
+    border: 1px solid #dce7e1;
+    background: white;
+    border-radius: 7px;
+}
+
+.remove {
+    border: none;
+    background: transparent;
+    color: #cf5656;
+    font-size: 12px;
+}
+
+.cart-summary {
+    max-width: 430px;
+    margin: 22px 0 0 auto;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.summary-line.total {
+    color: var(--dark);
+    font-size: 21px;
+    font-weight: 800;
+    border-top: 1px solid #e7eee9;
+    margin-top: 8px;
+    padding-top: 17px;
+}
+
+.discount-line {
+    color: var(--primary);
+}
+
+/* FINALIZAÇÃO */
+
+.checkout {
+    margin-top: 27px;
+    padding-top: 23px;
+    border-top: 1px solid #edf1ee;
+}
+
+.checkout h3 {
+    margin-bottom: 17px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field.full {
+    grid-column: 1/-1;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce7e1;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--primary);
+}
+
+.notice {
+    background: #fff7e9;
+    border: 1px solid #f4e2c3;
+    padding: 15px;
+    border-radius: 9px;
+    color: #815b22;
+    font-size: 12px;
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.whatsapp {
+    background: #1ba85b;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 17px;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.whatsapp:hover {
+    background: #128548;
+}
+
+/* VANTAGENS */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.benefit {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.benefit .icon {
+    font-size: 28px;
+}
+
+.benefit b {
+    display: block;
+    margin: 10px 0 6px;
+}
+
+.benefit p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #073e34;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+footer p {
+    color: #c7ded5;
+}
+
+footer .mapa {
+    max-width: 800px;
+    margin: 20px auto 0;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid #0a5a4a;
+    box-shadow: 0 4px 16px #00000040;
+}
+
+footer .mapa iframe {
+    display: block;
+    width: 100%;
+    height: 320px;
+    border: 0;
+}
+
+/* KIT DE LIMPEZA */
+
+.kit {
+    margin-bottom: 52px;
+    scroll-margin-top: 115px;
+}
+
+.kit-box {
+    background: white;
+    border: 1px solid #e6eee9;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.kit-step {
+    margin-bottom: 20px;
+}
+
+.kit-label {
+    display: block;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 11px;
+}
+
+.kit-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.kit-chip {
+    padding: 11px 17px;
+    border: 1px solid #dce7e1;
+    border-radius: 30px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+    transition: .15s;
+}
+
+.kit-chip small {
+    display: block;
+    font-size: 10px;
+    opacity: .75;
+    margin-top: 2px;
+}
+
+.kit-chip:hover {
+    border-color: var(--primary);
+}
+
+.kit-chip.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.kit-hint {
+    background: var(--light);
+    color: var(--dark);
+    border-radius: 10px;
+    padding: 16px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.kit-list {
+    border-top: 1px solid #edf1ee;
+    margin-top: 6px;
+}
+
+.kit-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto;
+    gap: 14px;
+    align-items: center;
+    padding: 13px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.kit-row.off {
+    opacity: .45;
+}
+
+.kit-row input[type="checkbox"] {
+    width: 19px;
+    height: 19px;
+    accent-color: var(--primary);
+}
+
+.kit-row strong {
+    font-size: 13px;
+    display: block;
+}
+
+.kit-row small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.kit-row .row-total {
+    min-width: 72px;
+    text-align: right;
+    font-size: 13px;
+}
+
+.kit-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.kit-total span {
+    color: var(--muted);
+    font-size: 12px;
+    display: block;
+}
+
+.kit-total strong {
+    color: var(--dark);
+    font-size: 24px;
+}
+
+.kit-warning {
+    color: #815b22;
+    background: #fff7e9;
+    border: 1px solid #f4e2c3;
+    border-radius: 9px;
+    padding: 11px 14px;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 14px;
+}
+
+.kit-add {
+    background: var(--orange);
+    color: #17352d;
+    border: none;
+    padding: 15px 22px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.kit-add:hover {
+    background: #ffad4d;
+}
+
+/* IMAGEM ALTERNATIVA */
+
+.img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 64px;
+    background: var(--light);
+    border-radius: 10px;
+}
+
+/* NOTIFICAÇÃO */
+
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 22px;
+    transform: translate(-50%, 90px);
+    background: var(--dark);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 10px;
+    font-size: 13px;
+    box-shadow: 0 8px 26px #00000030;
+    z-index: 200;
+    transition: transform .3s;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    max-width: 92vw;
+}
+
+.toast.show {
+    transform: translate(-50%, 0);
+}
+
+.toast a {
+    color: var(--orange);
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 620px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 125px;
+    }
+
+    .product h3 {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .add {
+        padding: 9px 8px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    main {
+        padding: 30px 13px 55px;
+    }
+
+    .cart-section {
+        padding: 15px;
+    }
+
+    .cart-row {
+        grid-template-columns: 1fr auto;
+        gap: 9px;
+    }
+
+    .cart-row .quantity {
+        grid-column: 1;
+    }
+
+    .cart-row .row-total {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .cart-row .remove {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        width: 145px;
+        height: 55px;
+    }
+
+    .cart-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .kit-box {
+        padding: 16px;
+    }
+
+    .kit-row {
+        grid-template-columns: auto 1fr;
+        gap: 9px 12px;
+    }
+
+    .kit-row .quantity {
+        grid-column: 2;
+    }
+
+    .kit-row .row-total {
+        grid-column: 2;
+        text-align: left;
+    }
+
+    .kit-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .img-placeholder {
+        font-size: 48px;
+    }
+
+    footer .mapa iframe {
+        height: 240px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header>
+
+    <div class="topbar">
+        🚚 Entrega em até 72 horas em toda a região Sul Fluminense do RJ
+    </div>
+
+    <div class="nav">
+
+        <div class="logo">
+            <img src="imagens/logo2.png" alt="Logo da empresa">
+        </div>
+
+        <button class="cart-button" onclick="goCart()">
+            🛒 Carrinho
+            <span id="cart-count">0</span>
+        </button>
+
+    </div>
+
+</header>
+
+<!-- BANNER -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Limpeza e economia para o seu dia a dia.</h1>
+
+        <p>
+            Encontre produtos de limpeza, escritório e papelaria para sua casa,
+            empresa ou instituição. Escolha seus produtos,
+            monte seu carrinho e faça seu pedido diretamente
+            pelo WhatsApp.
+        </p>
+
+        <div class="hero-actions">
+
+            <a class="hero-cta" href="#catalogo">
+                🧾 FAÇA SEU ORÇAMENTO
+            </a>
+
+            <a class="hero-cta secondary" href="#kit">
+                🧰 MONTE SEU KIT DE LIMPEZA
+            </a>
+
+        </div>
+
+        <div class="hero-info">
+            <span>✓ Pedido mínimo: R$ 55,00</span>
+            <span>✓ Entrega em até 72 horas</span>
+            <span>✓ Pix ou boleto</span>
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+<!-- KIT DE LIMPEZA -->
+
+<section id="kit" class="kit">
+
+    <div class="section-title">
+
+        <h2>🧰 Monte seu Kit de Limpeza ideal</h2>
+
+        <p>
+            Responda 2 perguntas e receba uma sugestão pronta.
+            Você pode ajustar as quantidades antes de adicionar ao carrinho.
+        </p>
+
+    </div>
+
+    <div class="kit-box">
+
+        <div class="kit-step">
+
+            <span class="kit-label">
+                1. Onde o kit será usado?
+            </span>
+
+            <div class="kit-chips" id="kit-env"></div>
+
+        </div>
+
+        <div class="kit-step">
+
+            <span class="kit-label">
+                2. Qual o tamanho do espaço?
+            </span>
+
+            <div class="kit-chips" id="kit-size"></div>
+
+        </div>
+
+        <div id="kit-result"></div>
+
+    </div>
+
+</section>
+
+<!-- CATÁLOGO -->
+
+<section id="catalogo">
+
+    <div class="section-title">
+
+        <h2>Nosso catálogo</h2>
+
+        <p>
+            Confira nossos produtos e adicione ao seu carrinho.
+        </p>
+
+    </div>
+
+    <div class="toolbar">
+
+        <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="🔎 Pesquisar produto..."
+            oninput="renderProducts()"
+        >
+
+    </div>
+
+    <div class="filters">
+
+        <button class="filter active" onclick="setCategory('Todos',this)">
+            Todos
+        </button>
+
+        <button class="filter" onclick="setCategory('Sabonetes',this)">
+            Sabonetes
+        </button>
+
+        <button class="filter" onclick="setCategory('Limpeza geral',this)">
+            Limpeza geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Lavanderia',this)">
+            Lavanderia
+        </button>
+
+        <button class="filter" onclick="setCategory('Uso geral',this)">
+            Uso geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Luvas',this)">
+            Luvas
+        </button>
+
+        <button class="filter" onclick="setCategory('Álcool',this)">
+            Álcool
+        </button>
+
+        <button class="filter" onclick="setCategory('Acessórios',this)">
+            Acessórios
+        </button>
+
+        <button class="filter" onclick="setCategory('Escritório',this)">
+            Escritório
+        </button>
+
+        <button class="filter" onclick="setCategory('Papelaria',this)">
+            Papelaria
+        </button>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<!-- CARRINHO -->
+
+<section class="cart-section" id="cart">
+
+    <h2>🛒 Meu carrinho de compras</h2>
+
+    <div id="cart-items" class="cart-empty">
+        Seu carrinho está vazio. Adicione produtos para começar!
+    </div>
+
+    <div class="cart-summary" id="summary" style="display:none">
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="subtotal">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line discount-line" id="discount-row">
+            <span>Desconto Pix (3%)</span>
+            <strong id="discount">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line total">
+            <span>Total</span>
+            <span id="total">R$ 0,00</span>
+        </div>
+
+        <div class="summary-line">
+            <span>Pedido mínimo</span>
+            <strong>R$ 55,00</strong>
+        </div>
+
+    </div>
+
+    <!-- DADOS DO CLIENTE -->
+
+    <div class="checkout">
+
+        <h3>📋 Dados para o pedido</h3>
+
+        <div class="form-grid">
+
+            <div class="field full">
+
+                <label>Tipo de pessoa *</label>
+
+                <select id="personType" onchange="updatePersonType()">
+
+                    <option value="PF">
+                        Pessoa Física (CPF)
+                    </option>
+
+                    <option value="PJ">
+                        Pessoa Jurídica (CNPJ)
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field">
+
+                <label id="nameLabel">
+                    Nome completo *
+                </label>
+
+                <input
+                    id="customer"
+                    placeholder="Seu nome completo"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label id="docLabel">CPF *</label>
+
+                <input
+                    id="document"
+                    placeholder="000.000.000-00"
+                    inputmode="numeric"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>Telefone *</label>
+
+                <input
+                    id="phone"
+                    placeholder="(24) 99999-9999"
+                >
+
+            </div>
+
+            <div class="field">
+
+                <label>Cidade *</label>
+
+                <input
+                    id="city"
+                    placeholder="Sua cidade"
+                >
+
+            </div>
+
+            <div class="field full">
+
+                <label>Forma de pagamento *</label>
+
+                <select id="payment" onchange="updateCart()">
+
+                    <option value="Pix">
+                        Pix - 3% de desconto
+                    </option>
+
+                    <option value="Boleto">
+                        Boleto - 7 dias
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="field full">
+
+                <label>Endereço de entrega *</label>
+
+                <input
+                    id="address"
+                    placeholder="Rua, número, bairro e CEP"
+                >
+
+            </div>
+
+            <div class="field full">
+
+                <label>Observações</label>
+
+                <textarea
+                    id="notes"
+                    rows="3"
+                    placeholder="Informações adicionais sobre seu pedido..."
+                ></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="notice">
+
+            <strong>Informações importantes:</strong>
+
+            <br>• Pedido mínimo de R$ 55,00.
+            <br>• Entrega direta em toda a região Sul Fluminense do RJ.
+            <br>• Prazo de entrega: até 72 horas.
+            <br>• Pix com desconto de 3%.
+            <br>• Boleto com prazo de 7 dias.
+
+        </div>
+
+        <button class="whatsapp" onclick="checkout()">
+            ☎ FINALIZAR PEDIDO PELO WHATSAPP
+        </button>
+
+    </div>
+
+</section>
+
+<!-- VANTAGENS -->
+
+<section class="benefits">
+
+    <div class="benefit">
+
+        <div class="icon">🚚</div>
+
+        <b>Entrega regional</b>
+
+        <p>
+            Atendemos toda a região Sul Fluminense do Rio de Janeiro.
+        </p>
+
+    </div>
+
+    <div class="benefit">
+
+        <div class="icon">⏱️</div>
+
+        <b>Agilidade</b>
+
+        <p>
+            Prazo de entrega de até 72 horas.
+        </p>
+
+    </div>
+
+    <div class="benefit">
+
+        <div class="icon">💳</div>
+
+        <b>Facilidade no pagamento</b>
+
+        <p>
+            Pix com 3% de desconto ou boleto com prazo de 7 dias.
+        </p>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <strong>VERTEX DISTRIBUIDORA</strong>
+
+    <p>Qualidade, economia e praticidade para você.</p>
+
+    <p>Atendimento em toda a região Sul Fluminense - RJ</p>
+
+    <p>© 2026 - Desenvolvido por Vertex Soluções Tecnólogicas</p>
+
+    <div class="mapa">
+        <iframe
+            src="https://maps.google.com/maps?q=R.%20Elisabete%20-%20Ramada%2C%20Miguel%20Pereira%20-%20RJ%2C%2026900-000&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            title="Localização da empresa - R. Elisabete - Ramada, Miguel Pereira - RJ"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+
+/* ==========================================
+   CONFIGURAÇÃO DA LOJA
+========================================== */
+
+// WhatsApp oficial da empresa.
+// Formato: 55 + DDD + número.
+
+const WHATSAPP = "5524992621456";
+
+
+/* ==========================================
+   CADASTRO DE PRODUTOS
+========================================== */
+
+const products = [
+
+    // TOPBEL - SABONETES
+
+    {
+        id: 1,
+        name: "Sabonete Líquido Erva Doce 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/1.png"
+    },
+
+    {
+        id: 2,
+        name: "Sabonete Líquido Lavanda 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/2.png"
+    },
+
+    {
+        id: 3,
+        name: "Sabonete Líquido Neutro 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/3.png"
+    },
+
+    // TOPBEL - LIMPEZA GERAL
+
+    {
+        id: 4,
+        name: "Desinfetante Uso Geral Eucalipto 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/4.PNG"
+    },
+
+    {
+        id: 5,
+        name: "Desinfetante Uso Geral Pinho 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/5.png"
+    },
+
+    {
+        id: 6,
+        name: "Desinfetante Uso Geral Floral 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/6.png"
+    },
+
+    {
+        id: 7,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/7.png"
+    },
+
+    {
+        id: 8,
+        name: "Limpador de Vidros 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/8.png"
+    },
+
+    {
+        id: 9,
+        name: "Água Sanitária Galão 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/9.png"
+    },
+
+    {
+        id: 10,
+        name: "Desinfetante Hipoclorito (Cloro) 2,5% - 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/10.png"
+    },
+
+    {
+        id: 11,
+        name: "Álcool Gel 70% Fliptop 440g/500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 5.43,
+        image: "imagens/11.png"
+    },
+
+    // TOPBEL - LAVANDERIA
+
+    {
+        id: 12,
+        name: "Lava Roupas Líquido 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 19.50,
+        image: "imagens/122.png"
+    },
+
+    {
+        id: 13,
+        name: "Lava Roupas Líquido 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 12.40,
+        image: "imagens/13.png"
+    },
+
+    {
+        id: 14,
+        name: "Amaciante para Roupas 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 13.78,
+        image: "imagens/14.png"
+    },
+
+    {
+        id: 15,
+        name: "Amaciante para Roupas 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 5.00,
+        image: "imagens/15.png"
+    },
+
+    // BARRA
+
+    {
+        id: 16,
+        name: "Detergente Neutro 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 1.95,
+        image: "imagens/16.png"
+    },
+
+    {
+        id: 17,
+        name: "Sabão em Pó 800 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 4.79,
+        image: "imagens/17.png"
+    },
+
+    {
+        id: 18,
+        name: "Sabão em Pó 1,60 kg",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 7.39,
+        image: "imagens/18.png"
+    },
+
+    {
+        id: 19,
+        name: "Sabão Pastoso Pote 500 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 6.15,
+        image: "imagens/19.pNg"
+    },
+
+    {
+        id: 20,
+        name: "Sabão em Barra Glicerinado Pacote com 5 Barras",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 8.78,
+        image: "imagens/20.png"
+    },
+
+    {
+        id: 21,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 2.80,
+        image: "imagens/21.png"
+    },
+
+    // MEDIX
+
+    {
+        id: 22,
+        name: "Luva de Limpeza Geral Emborrachada Tamanho G",
+        brand: "MEDIX",
+        category: "Luvas",
+        price: 2.28,
+        image: "imagens/22.png"
+    },
+
+    // CORDEX
+
+    {
+        id: 23,
+        name: "Álcool 70º - 1 Litro",
+        brand: "CORDEX",
+        category: "Álcool",
+        price: 6.98,
+        image: "imagens/23.png"
+    },
+
+    // ACESSÓRIOS
+
+    {
+        id: 24,
+        name: "Esponja de Limpeza Dupla Face Brasileirinha",
+        brand: "OUTRAS MARCAS",
+        category: "Acessórios",
+        price: 0.74,
+        image: "imagens/24.png"
+    },
+
+    // ESCRITÓRIO
+
+    {
+        id: 25,
+        name: "Papel Sulfite A4 75g - Resma com 500 folhas",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 26.90,
+        image: "imagens/a5.png",
+        emoji: "📄"
+    },
+
+    {
+        id: 26,
+        name: "Grampeador de Mesa 26/6 até 25 folhas",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 14.90,
+        image: "imagens/26.png",
+        emoji: "📎"
+    },
+
+    {
+        id: 27,
+        name: "Grampos 26/6 - Caixa com 5.000 unidades",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 4.50,
+        image: "imagens/27.png",
+        emoji: "🔩"
+    },
+
+    {
+        id: 28,
+        name: "Clips Galvanizado nº 2/0 - Caixa com 100 unidades",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 2.90,
+        image: "imagens/28.png",
+        emoji: "📎"
+    },
+
+    {
+        id: 29,
+        name: "Pasta Suspensa Marmorizada - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 2.60,
+        image: "imagens/29.png",
+        emoji: "🗂️"
+    },
+
+    {
+        id: 30,
+        name: "Pasta AZ Ofício Lombo Largo",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 13.50,
+        image: "imagens/30.png",
+        emoji: "📁"
+    },
+
+    {
+        id: 31,
+        name: "Envelope Saco Kraft A4 - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 0.85,
+        image: "imagens/31.png",
+        emoji: "✉️"
+    },
+
+    {
+        id: 32,
+        name: "Fita Adesiva Transparente 48 mm x 50 m",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 4.20,
+        image: "imagens/32.png",
+        emoji: "🎞️"
+    },
+
+    {
+        id: 33,
+        name: "Bloco de Recados Adesivo 76 x 76 mm - 100 folhas",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 5.50,
+        image: "imagens/33.png",
+        emoji: "🗒️"
+    },
+
+    {
+        id: 34,
+        name: "Calculadora de Mesa 12 Dígitos",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 24.90,
+        image: "imagens/34.png",
+        emoji: "🧮"
+    },
+
+    {
+        id: 35,
+        name: "Tesoura para Escritório 21 cm",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 6.90,
+        image: "imagens/35.png",
+        emoji: "✂️"
+    },
+
+    {
+        id: 36,
+        name: "Perfurador de Papel 2 Furos",
+        brand: "OUTRAS MARCAS",
+        category: "Escritório",
+        price: 15.90,
+        image: "imagens/36.png",
+        emoji: "🕳️"
+    },
+
+    // PAPELARIA
+
+    {
+        id: 37,
+        name: "Caderno Universitário Espiral 10 Matérias",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 18.90,
+        image: "imagens/37.png",
+        emoji: "📓"
+    },
+
+    {
+        id: 38,
+        name: "Caderno Brochura Capa Dura 96 folhas",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 8.90,
+        image: "imagens/38.png",
+        emoji: "📔"
+    },
+
+    {
+        id: 39,
+        name: "Caneta Esferográfica Azul - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 1.20,
+        image: "imagens/39.png",
+        emoji: "🖊️"
+    },
+
+    {
+        id: 40,
+        name: "Caneta Esferográfica Preta - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 1.20,
+        image: "imagens/40.png",
+        emoji: "🖊️"
+    },
+
+    {
+        id: 41,
+        name: "Lápis Preto nº 2 - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 0.90,
+        image: "imagens/41.png",
+        emoji: "✏️"
+    },
+
+    {
+        id: 42,
+        name: "Borracha Branca Macia - Unidade",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 0.80,
+        image: "imagens/42.png",
+        emoji: "🧽"
+    },
+
+    {
+        id: 43,
+        name: "Apontador com Depósito",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 1.50,
+        image: "imagens/43.png",
+        emoji: "📐"
+    },
+
+    {
+        id: 44,
+        name: "Régua Acrílica 30 cm",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 2.20,
+        image: "imagens/44.png",
+        emoji: "📏"
+    },
+
+    {
+        id: 45,
+        name: "Marca-Texto Amarelo",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 2.50,
+        image: "imagens/45.png",
+        emoji: "🖍️"
+    },
+
+    {
+        id: 46,
+        name: "Cola Branca 90 g",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 2.80,
+        image: "imagens/46.png",
+        emoji: "🧴"
+    },
+
+    {
+        id: 47,
+        name: "Cola Bastão 10 g",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 2.90,
+        image: "imagens/47.png",
+        emoji: "🧷"
+    },
+
+    {
+        id: 48,
+        name: "Lápis de Cor - Caixa com 12 cores",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 7.90,
+        image: "imagens/48.png",
+        emoji: "🎨"
+    },
+
+    {
+        id: 49,
+        name: "Canetinha Hidrocor - Caixa com 12 cores",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 8.90,
+        image: "imagens/49.png",
+        emoji: "🖌️"
+    },
+
+    {
+        id: 50,
+        name: "Cartolina Branca - Folha",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 1.20,
+        image: "imagens/50.png",
+        emoji: "⬜"
+    },
+
+    {
+        id: 51,
+        name: "EVA Liso - Folha",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 2.30,
+        image: "imagens/51.png",
+        emoji: "🟦"
+    },
+
+    {
+        id: 52,
+        name: "Pasta Plástica com Elástico Ofício",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 3.90,
+        image: "imagens/52.png",
+        emoji: "🗃️"
+    },
+
+    {
+        id: 53,
+        name: "Tesoura Escolar sem Ponta",
+        brand: "OUTRAS MARCAS",
+        category: "Papelaria",
+        price: 3.50,
+        image: "imagens/53.png",
+        emoji: "✂️"
+    }
+
+];
+
+
+/* ==========================================
+   FUNCIONAMENTO DO CATÁLOGO
+========================================== */
+
+let cart = {};
+
+let activeCategory = "Todos";
+
+const money = value => {
+
+    return Number(value).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+    });
+
+};
+
+
+/* ==========================================
+   EXIBIR PRODUTOS
+========================================== */
+
+function renderProducts() {
+
+    const search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    const list = products.filter(p => {
+
+        const matchesCategory =
+            activeCategory === "Todos" ||
+            p.category === activeCategory;
+
+        const matchesSearch =
+            (p.name + " " + p.brand + " " + p.category)
+            .toLowerCase()
+            .includes(search);
+
+        return matchesCategory && matchesSearch;
+
+    });
+
+    const container = document.getElementById("products");
+
+    if (!list.length) {
+
+        container.innerHTML =
+            '<div class="empty">Nenhum produto encontrado.</div>';
+
+        return;
+
+    }
+
+    container.innerHTML = list.map(p => `
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="${p.image}"
+                    alt="${p.name}"
+                    loading="lazy"
+                    onerror="imgFallback(this,'${p.emoji || ''}')"
+                >
+
+            </div>
+
+            <span class="brand">${p.brand}</span>
+
+            <h3>${p.name}</h3>
+
+            <small>Venda por unidade / embalagem descrita</small>
+
+            <div class="product-bottom">
+
+                <span class="price">${money(p.price)}</span>
+
+                <button
+                    class="add"
+                    onclick="addToCart(${p.id})"
+                >
+                    + Adicionar
+                </button>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+
+/* ==========================================
+   IMAGENS ALTERNATIVAS
+========================================== */
+
+function imgFallback(img, emoji) {
+
+    img.onerror = null;
+
+    if (emoji) {
+
+        const box = document.createElement("div");
+
+        box.className = "img-placeholder";
+
+        box.textContent = emoji;
+
+        img.replaceWith(box);
+
+    } else {
+
+        img.src = "imagens/sem-foto.png";
+
+    }
+
+}
+
+
+/* ==========================================
+   FILTROS
+========================================== */
+
+function setCategory(category, button) {
+
+    activeCategory = category;
+
+    document.querySelectorAll(".filter").forEach(b => {
+
+        b.classList.remove("active");
+
+    });
+
+    button.classList.add("active");
+
+    renderProducts();
+
+}
+
+
+/* ==========================================
+   CARRINHO
+========================================== */
+
+function addToCart(id) {
+
+    cart[id] = (cart[id] || 0) + 1;
+
+    updateCart();
+
+}
+
+
+function changeQuantity(id, amount) {
+
+    cart[id] = (cart[id] || 0) + amount;
+
+    if (cart[id] <= 0) {
+
+        delete cart[id];
+
+    }
+
+    updateCart();
+
+}
+
+
+function removeItem(id) {
+
+    delete cart[id];
+
+    updateCart();
+
+}
+
+
+function getSubtotal() {
+
+    return Object.entries(cart).reduce((sum, [id, qty]) => {
+
+        const product = products.find(
+            p => p.id === Number(id)
+        );
+
+        return sum + product.price * qty;
+
+    }, 0);
+
+}
+
+
+/* ==========================================
+   ATUALIZAÇÃO DO CARRINHO
+========================================== */
+
+function updateCart() {
+
+    const container = document.getElementById("cart-items");
+
+    const entries = Object.entries(cart);
+
+    const count = entries.reduce(
+        (sum, item) => sum + item[1],
+        0
+    );
+
+    document.getElementById("cart-count").textContent = count;
+
+    if (!entries.length) {
+
+        container.className = "cart-empty";
+
+        container.innerHTML =
+            "Seu carrinho está vazio. Adicione produtos para começar!";
+
+        document.getElementById("summary").style.display = "none";
+
+        return;
+
+    }
+
+    container.className = "";
+
+    container.innerHTML = entries.map(([id, qty]) => {
+
+        const p = products.find(
+            item => item.id === Number(id)
+        );
+
+        return `
+
+            <div class="cart-row">
+
+                <div>
+
+                    <strong>${p.name}</strong>
+
+                    <small>
+                        ${p.brand} · ${money(p.price)} cada
+                    </small>
+
+                </div>
+
+                <div class="quantity">
+
+                    <button onclick="changeQuantity(${p.id},-1)">
+                        −
+                    </button>
+
+                    <strong>${qty}</strong>
+
+                    <button onclick="changeQuantity(${p.id},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <strong class="row-total">
+                    ${money(p.price * qty)}
+                </strong>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${p.id})"
+                >
+                    Remover
+                </button>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+    document.getElementById("summary").style.display = "block";
+
+    const subtotal = getSubtotal();
+
+    const isPix =
+        document.getElementById("payment").value === "Pix";
+
+    const discount = isPix ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    document.getElementById("subtotal").textContent =
+        money(subtotal);
+
+    document.getElementById("discount").textContent =
+        "- " + money(discount);
+
+    document.getElementById("discount-row").style.display =
+        isPix ? "flex" : "none";
+
+    document.getElementById("total").textContent =
+        money(total);
+
+}
+
+
+/* ==========================================
+   KIT DE LIMPEZA IDEAL
+========================================== */
+
+// Cada item: [ID do produto, qtd. Pequeno, qtd. Médio, qtd. Grande]
+
+const KIT_SIZES = [
+
+    { label: "Pequeno", hint: "até 50 m²" },
+
+    { label: "Médio", hint: "50 a 150 m²" },
+
+    { label: "Grande", hint: "acima de 150 m²" }
+
+];
+
+
+const KIT_ENVS = {
+
+    casa: {
+
+        label: "🏠 Casa",
+
+        items: [
+
+            [4, 1, 2, 3],
+            [9, 1, 1, 2],
+            [16, 2, 3, 5],
+            [24, 2, 3, 5],
+            [7, 1, 2, 3],
+            [8, 1, 1, 2],
+            [13, 1, 2, 3],
+            [15, 1, 2, 3],
+            [22, 1, 2, 3],
+            [11, 1, 2, 3]
+
+        ]
+
+    },
+
+    escritorio: {
+
+        label: "💼 Escritório / Empresa",
+
+        items: [
+
+            [3, 1, 1, 2],
+            [4, 1, 2, 3],
+            [7, 2, 3, 5],
+            [8, 1, 2, 3],
+            [23, 1, 2, 3],
+            [11, 2, 3, 5],
+            [9, 1, 1, 2],
+            [22, 1, 2, 3],
+            [24, 2, 3, 5]
+
+        ]
+
+    },
+
+    cozinha: {
+
+        label: "🍽️ Restaurante / Cozinha",
+
+        items: [
+
+            [16, 3, 6, 12],
+            [19, 1, 2, 3],
+            [10, 1, 2, 4],
+            [9, 1, 2, 3],
+            [4, 1, 2, 4],
+            [24, 4, 8, 15],
+            [22, 2, 4, 8],
+            [23, 1, 2, 4],
+            [11, 1, 2, 3],
+            [3, 1, 1, 2]
+
+        ]
+
+    },
+
+    condominio: {
+
+        label: "🏢 Condomínio / Escola",
+
+        items: [
+
+            [4, 1, 2, 4],
+            [5, 1, 2, 3],
+            [9, 1, 2, 4],
+            [10, 1, 1, 2],
+            [7, 2, 4, 6],
+            [8, 1, 2, 3],
+            [3, 1, 2, 3],
+            [11, 2, 3, 5],
+            [22, 2, 4, 6],
+            [24, 3, 5, 8]
+
+        ]
+
+    }
+
+};
+
+
+let kitEnv = null;
+
+let kitSize = null;
+
+let kitState = {};
+
+
+/* ==========================================
+   OPÇÕES DO KIT
+========================================== */
+
+function renderKitChips() {
+
+    document.getElementById("kit-env").innerHTML =
+
+        Object.entries(KIT_ENVS).map(([key, env]) => `
+
+            <button
+                class="kit-chip ${kitEnv === key ? "active" : ""}"
+                onclick="selectKitEnv('${key}')"
+            >
+                ${env.label}
+            </button>
+
+        `).join("");
+
+
+    document.getElementById("kit-size").innerHTML =
+
+        KIT_SIZES.map((s, i) => `
+
+            <button
+                class="kit-chip ${kitSize === i ? "active" : ""}"
+                onclick="selectKitSize(${i})"
+            >
+                ${s.label}
+
+                <small>${s.hint}</small>
+
+            </button>
+
+        `).join("");
+
+}
+
+
+function selectKitEnv(key) {
+
+    kitEnv = key;
+
+    buildKit();
+
+}
+
+
+function selectKitSize(index) {
+
+    kitSize = index;
+
+    buildKit();
+
+}
+
+
+/* ==========================================
+   MONTAR KIT
+========================================== */
+
+function buildKit() {
+
+    kitState = {};
+
+    if (kitEnv !== null && kitSize !== null) {
+
+        KIT_ENVS[kitEnv].items.forEach(item => {
+
+            const qty = item[kitSize + 1];
+
+            if (qty > 0) {
+
+                kitState[item[0]] = {
+                    on: true,
+                    qty: qty
+                };
+
+            }
+
+        });
+
+    }
+
+    renderKitChips();
+
+    renderKit();
+
+}
+
+
+/* ==========================================
+   TOTAL DO KIT
+========================================== */
+
+function getKitTotal() {
+
+    return Object.entries(kitState).reduce((sum, [id, item]) => {
+
+        if (!item.on) return sum;
+
+        const p = products.find(
+            x => x.id === Number(id)
+        );
+
+        return sum + p.price * item.qty;
+
+    }, 0);
+
+}
+
+
+/* ==========================================
+   EXIBIR KIT
+========================================== */
+
+function renderKit() {
+
+    const box = document.getElementById("kit-result");
+
+    if (kitEnv === null || kitSize === null) {
+
+        box.innerHTML = `
+
+            <div class="kit-hint">
+                👆 Escolha o local e o tamanho para ver o kit sugerido.
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+    const rows = Object.entries(kitState).map(([id, item]) => {
+
+        const p = products.find(
+            x => x.id === Number(id)
+        );
+
+        return `
+
+            <div class="kit-row ${item.on ? "" : "off"}">
+
+                <input
+                    type="checkbox"
+                    ${item.on ? "checked" : ""}
+                    onchange="toggleKitItem(${p.id})"
+                    aria-label="Incluir ${p.name}"
+                >
+
+                <div>
+
+                    <strong>${p.name}</strong>
+
+                    <small>
+                        ${p.brand} · ${money(p.price)} cada
+                    </small>
+
+                </div>
+
+                <div class="quantity">
+
+                    <button onclick="changeKitQty(${p.id},-1)">
+                        −
+                    </button>
+
+                    <strong>${item.qty}</strong>
+
+                    <button onclick="changeKitQty(${p.id},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <strong class="row-total">
+                    ${money(p.price * item.qty)}
+                </strong>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+
+    const total = getKitTotal();
+
+    const hasItems = Object.values(kitState).some(i => i.on);
+
+
+    const warning = (hasItems && total < 55)
+
+        ? `
+
+            <div class="kit-warning">
+
+                O pedido mínimo é de R$ 55,00.
+                Complete o kit com outros produtos do catálogo,
+                se precisar.
+
+            </div>
+
+        `
+
+        : "";
+
+
+    box.innerHTML = `
+
+        <div class="kit-list">
+            ${rows}
+        </div>
+
+        <div class="kit-footer">
+
+            <div class="kit-total">
+
+                <span>Total do kit</span>
+
+                <strong>${money(total)}</strong>
+
+            </div>
+
+            <button
+                class="kit-add"
+                onclick="addKitToCart()"
+                ${hasItems ? "" : "disabled style='opacity:.5'"}
+            >
+                🛒 ADICIONAR KIT AO CARRINHO
+            </button>
+
+        </div>
+
+        ${warning}
+
+    `;
+
+}
+
+
+/* ==========================================
+   ALTERAR ITENS DO KIT
+========================================== */
+
+function toggleKitItem(id) {
+
+    kitState[id].on = !kitState[id].on;
+
+    renderKit();
+
+}
+
+
+function changeKitQty(id, amount) {
+
+    kitState[id].qty = Math.max(
+        1,
+        kitState[id].qty + amount
+    );
+
+    renderKit();
+
+}
+
+
+/* ==========================================
+   NOTIFICAÇÕES
+========================================== */
+
+let toastTimer;
+
+
+function showToast(html) {
+
+    const t = document.getElementById("toast");
+
+    t.innerHTML = html;
+
+    t.classList.add("show");
+
+    clearTimeout(toastTimer);
+
+    toastTimer = setTimeout(
+        () => t.classList.remove("show"),
+        5000
+    );
+
+}
+
+
+/* ==========================================
+   ADICIONAR KIT AO CARRINHO
+========================================== */
+
+function addKitToCart() {
+
+    let added = 0;
+
+    Object.entries(kitState).forEach(([id, item]) => {
+
+        if (item.on) {
+
+            cart[id] = (cart[id] || 0) + item.qty;
+
+            added++;
+
+        }
+
+    });
+
+    if (!added) return;
+
+    updateCart();
+
+    showToast(
+
+        "✓ Kit adicionado ao carrinho " +
+
+        "<a onclick=\"goCart();document.getElementById('toast').classList.remove('show')\">Ver carrinho</a>"
+
+    );
+
+}
+
+
+/* ==========================================
+   NAVEGAÇÃO ATÉ O CARRINHO
+========================================== */
+
+function goCart() {
+
+    document.getElementById("cart").scrollIntoView({
+
+        behavior: "smooth"
+
+    });
+
+}
+
+
+/* ==========================================
+   TIPO DE PESSOA: PF / PJ
+========================================== */
+
+function updatePersonType() {
+
+    const type = document.getElementById("personType").value;
+
+    const nameLabel = document.getElementById("nameLabel");
+
+    const customerInput = document.getElementById("customer");
+
+    const docLabel = document.getElementById("docLabel");
+
+    const docInput = document.getElementById("document");
+
+    docInput.value = "";
+
+    if (type === "PF") {
+
+        nameLabel.textContent = "Nome completo *";
+
+        customerInput.placeholder = "Seu nome completo";
+
+        docLabel.textContent = "CPF *";
+
+        docInput.placeholder = "000.000.000-00";
+
+    } else {
+
+        nameLabel.textContent = "Razão Social *";
+
+        customerInput.placeholder = "Razão social da empresa";
+
+        docLabel.textContent = "CNPJ *";
+
+        docInput.placeholder = "00.000.000/0000-00";
+
+    }
+
+}
+
+
+/* ==========================================
+   VALIDAÇÃO DE CPF / CNPJ
+========================================== */
+
+function onlyDigits(value) {
+
+    return (value || "").replace(/\D/g, "");
+
+}
+
+
+function isValidDocument(type, value) {
+
+    const digits = onlyDigits(value);
+
+    if (type === "PF") {
+
+        return digits.length === 11;
+
+    }
+
+    return digits.length === 14;
+
+}
+
+
+/* ==========================================
+   FINALIZAÇÃO PELO WHATSAPP
+========================================== */
+
+function checkout() {
+
+    const entries = Object.entries(cart);
+
+    if (!entries.length) {
+
+        alert("Adicione pelo menos um produto ao carrinho.");
+
+        return;
+
+    }
+
+    const subtotal = getSubtotal();
+
+    if (subtotal < 55) {
+
+        alert(
+
+            "O pedido mínimo é de R$ 55,00.\n" +
+
+            "Faltam " + money(55 - subtotal) +
+
+            " para atingir o mínimo."
+
+        );
+
+        return;
+
+    }
+
+
+    const personType =
+        document.getElementById("personType").value;
+
+    const customer =
+        document.getElementById("customer").value.trim();
+
+    const documentValue =
+        document.getElementById("document").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const city =
+        document.getElementById("city").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const notes =
+        document.getElementById("notes").value.trim();
+
+
+    // VALIDAR DADOS OBRIGATÓRIOS
+
+    if (!customer || !phone || !city || !address) {
+
+        alert(
+            "Preencha nome/razão social, telefone, cidade e endereço de entrega."
+        );
+
+        return;
+
+    }
+
+
+    if (!documentValue) {
+
+        alert(
+
+            personType === "PF"
+
+                ? "Informe o CPF."
+
+                : "Informe o CNPJ."
+
+        );
+
+        return;
+
+    }
+
+
+    if (!isValidDocument(personType, documentValue)) {
+
+        alert(
+
+            personType === "PF"
+
+                ? "CPF inválido. Informe 11 dígitos."
+
+                : "CNPJ inválido. Informe 14 dígitos."
+
+        );
+
+        return;
+
+    }
+
+
+    // CALCULAR DESCONTO
+
+    const discount =
+        payment === "Pix" ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    const docLabel =
+        personType === "PF" ? "CPF" : "CNPJ";
+
+
+    // MONTAR MENSAGEM
+
+    let message = "";
+
+    message += "🛒 *NOVO PEDIDO - DISTRIBUIDORA DE LIMPEZA*\n";
+
+    message += "━━━━━━━━━━━━━━━━━━\n\n";
+
+    message += "*DADOS DO CLIENTE*\n";
+
+    message += "Tipo: " +
+
+        (personType === "PF"
+            ? "Pessoa Física"
+            : "Pessoa Jurídica") +
+
+        "\n";
+
+    message +=
+
+        (personType === "PF" ? "Nome: " : "Razão Social: ") +
+
+        customer + "\n";
+
+    message += docLabel + ": " + documentValue + "\n";
+
+    message += "Telefone: " + phone + "\n";
+
+    message += "Cidade: " + city + "\n";
+
+    message += "Endereço: " + address + "\n\n";
+
+
+    // PRODUTOS
+
+    message += "*PRODUTOS DO PEDIDO*\n";
+
+    entries.forEach(([id, qty]) => {
+
+        const p = products.find(
+
+            item => item.id === Number(id)
+
+        );
+
+        message += "\n• " + p.name + "\n";
+
+        message += "Marca: " + p.brand + "\n";
+
+        message += "Quantidade: " + qty + "\n";
+
+        message += "Valor: " + money(p.price * qty) + "\n";
+
+    });
+
+
+    // RESUMO FINANCEIRO
+
+    message += "\n━━━━━━━━━━━━━━━━━━\n";
+
+    message += "Subtotal: " + money(subtotal) + "\n";
+
+    if (discount > 0) {
+
+        message += "Desconto Pix (3%): - " +
+
+            money(discount) + "\n";
+
+    }
+
+    message += "*TOTAL: " + money(total) + "*\n";
+
+    message += "Pagamento: " + payment;
+
+    if (payment === "Boleto") {
+
+        message += " (prazo de 7 dias)";
+
+    }
+
+    message += "\n\n";
+
+
+    // OBSERVAÇÕES
+
+    if (notes) {
+
+        message += "Observações: " + notes + "\n\n";
+
+    }
+
+
+    // ENTREGA
+
+    message += "Entrega: até 72 horas\n";
+
+    message += "Região: Sul Fluminense - RJ\n\n";
+
+    message += "Aguardo a confirmação do pedido. Obrigado!";
+
+
+    // VALIDAR WHATSAPP DA LOJA
+
+    if (!/^55\d{10,11}$/.test(WHATSAPP)) {
+
+        alert(
+            "Configure o número de WhatsApp da loja no código antes de finalizar."
+        );
+
+        return;
+
+    }
+
+
+    // ABRIR WHATSAPP
+
+    const url =
+
+        "https://wa.me/" +
+
+        WHATSAPP +
+
+        "?text=" +
+
+        encodeURIComponent(message);
+
+
+    window.open(url, "_blank");
+
+}
+
+
+/* ==========================================
+   INICIALIZAÇÃO DO SISTEMA
+========================================== */
+
+renderProducts();
+
+renderKitChips();
+
+renderKit();
+
+updateCart();
+
+updatePersonType();
+
+</script>
+
+</body>
+</html>
